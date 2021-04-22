@@ -5,3 +5,12 @@
   roles:
     - role: role1
     - role: role2
+  tasks:
+  - name: Start the test scenario on SLICE1 
+    ansible.builtin.shell: /monitor_SLICE1.sh execute ‘“bin”,“start”’ ‘SIMULATION’ ‘simulation/simulations/N2_SLICE1’
+    
+  - name: Get the short format stats of the test scenario on SLICE1
+    ansible.builtin.shell: /monitor_SLICE1.sh stats
+    
+  - name: Get the long format stats of the test scenario on SLICE1
+    ansible.builtin.shell: /monitor_SLICE1.sh statl
