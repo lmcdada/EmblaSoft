@@ -5,3 +5,9 @@
   roles:
     - role: role1
     - role: role2
+- name: Run the script to execute the simulation on SLICE1
+    ansible.builtin.script: /some/local/monitor_SLICE1.sh execute ‘“bin”,“start”’ ‘SIMULATION’ ‘simulation/simulations/N2_SLICE1’
+- name: Run the script to get the short statistics of the simulation on SLICE1
+    ansible.builtin.script: /some/local/monitor_SLICE1.sh stats
+- name: Run the script to get the long statistics of the simulation on SLICE1
+    ansible.builtin.script: /some/local/monitor_SLICE1.sh statl
